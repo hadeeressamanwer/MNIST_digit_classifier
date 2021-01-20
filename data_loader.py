@@ -38,9 +38,10 @@ def load():
     with open("mnist.pkl",'rb') as f:
         mnist = pickle.load(f)
     return mnist["training_images"], mnist["training_labels"], mnist["test_images"], mnist["test_labels"]
-
+    
 def MakeOneHot(Y, D_out):
-    N = Y.shape[0]
+    N = Y.shape[0]          
     Z = np.zeros((N, D_out))
     Z[np.arange(N), Y] = 1
     return Z
+

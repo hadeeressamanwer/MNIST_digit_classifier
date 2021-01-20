@@ -1,7 +1,7 @@
 import numpy as np
 def NLLLoss(Y_pred, Y_true):
     """
-    Negative log likelihood loss
+    Negative log likelihood loss // softmax
     """
     loss = 0.0
     N = Y_pred.shape[0]
