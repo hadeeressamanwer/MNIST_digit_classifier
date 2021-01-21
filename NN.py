@@ -1,4 +1,3 @@
-import math
 import numpy as np
 
 def identity(z):
@@ -88,7 +87,7 @@ def softmax_loss(Y_pred, Y_true):
     Negative log likelihood loss
     """
     loss = 0.0
-    #Y_true= np.transpose(Y_true)
+
     M = Y_pred.shape[1]
     y_r = np.sum( (Y_pred*Y_true) , axis=0)
     for e in y_r:

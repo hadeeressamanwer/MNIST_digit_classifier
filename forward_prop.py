@@ -2,7 +2,7 @@ import numpy as np
 import NN
 def linear_forward(A, W, b):
     Z = np.dot(W, A) + b
-    assert (Z.shape == (W.shape[0], A.shape[1]))
+   # assert (Z.shape == (W.shape[0], A.shape[1]))
     cache = (A, W, b)
     return Z, cache
 
@@ -22,7 +22,7 @@ def linear_activation_forward(A_prev, W, b, activation):
         A, activation_cache = NN.identity(Z)
 
 
-    assert (A.shape == (W.shape[0], A_prev.shape[1]))
+    #assert (A.shape == (W.shape[0], A_prev.shape[1]))
     cache = (linear_cache, activation_cache)
 
     return A, cache
@@ -50,7 +50,7 @@ def L_model_forward(X, parameters,LayerActivationFunction,A_out):
 
 def compute_cost(AL, Y):
 
-    m = Y.shape[1]
+
     cost = NN.softmax_loss(AL,Y)
 
     return cost    

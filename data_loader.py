@@ -1,10 +1,11 @@
 import pickle
 import random
 import numpy as np
-from urllib import request
-import matplotlib.pyplot as plt
+import requests
 import gzip
-from abc import ABCMeta, abstractmethod
+
+
+
 
 filename = [
 	["training_images","train-images-idx3-ubyte.gz"],
@@ -16,7 +17,7 @@ def download_mnist():
     base_url = "http://yann.lecun.com/exdb/mnist/"
     for name in filename:
         print("Downloading "+name[1]+"...")
-        request.urlretrieve(base_url+name[1], name[1])
+        requests.urlretrieve(base_url+name[1], name[1])
     print("Download complete.")
 
 def save_mnist():
