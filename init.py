@@ -13,7 +13,7 @@ X_train, Y_train, X_test, Y_test = load()
 #X_train, X_test = X_train/float(255), X_test/float(255)
 #X_train -= np.mean(X_train)
 #X_test -= np.mean(X_test)
-batch_size = 10000
+batch_size = 2000
 D_out=10
 
 X_batch, Y_batch = get_batch(X_train, Y_train, batch_size)

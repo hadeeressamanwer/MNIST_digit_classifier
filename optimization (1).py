@@ -1,11 +1,9 @@
-import NN
 import numpy as np
-import matplotlib.pyplot as plt
 from init import X_batch , Y_batch ,X_train ,Y_train
 import init_param
 import forward_prop
 import back_prop
-
+import visualization
 
 def update_parameters_GD(parameters, grads, learning_rate):
 
@@ -60,14 +58,8 @@ def L_layer_model(X, Y, layers_dims,initialization, A_layers , A_out ,learning_r
             print("Cost after iteration %i: %f" % (i, cost))
         if print_cost and i % 100 == 0:
             costs.append(cost)
-
-    # plot the cost
-    plt.plot(np.squeeze(costs))
-    plt.ylabel('cost')
-    plt.xlabel('iterations (per hundreds)')
-    plt.title("Learning rate =" + str(learning_rate))
-    plt.show()
-
+    
+    visualization.draw_costs(costs,learning_rate) 
     return parameters
 
 #X = np.array([[6,2,3,4,5],
