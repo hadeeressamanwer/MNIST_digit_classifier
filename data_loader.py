@@ -13,6 +13,7 @@ filename = [
 	["test_labels","t10k-labels-idx1-ubyte.gz"]]
 
 def download_mnist():
+
     base_url = "http://yann.lecun.com/exdb/mnist/"
     for name in filename:
         print("Downloading "+name[1]+"...")
