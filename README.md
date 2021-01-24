@@ -1,4 +1,4 @@
-# MNIST_digit_classifier
+**# MNIST_digit_classifier
 implement deep learning model to classify digits
 
 ## Installation:
@@ -20,21 +20,21 @@ implement deep learning model to classify digits
 * CNN Forward propagation.
 
 
-##steps
-step1 :
+## steps
+* step1 : (<--  )
 import dependencies
 
-steps 2 :
-preparing dataset
--use download_mnist() function to download mnist dataset
--use save_mnist() function to save mnist in mnist.pkl
+* steps 2 : (<--  )
+preparing dataset (<--  )
+-use download_mnist() function to download mnist dataset (<--  )
+-use save_mnist() function to save mnist in mnist.pkl (<--  )
 
-steps 3 :
+* steps 3 :
 use load function () to 
 load data for training and testing from mnist.pkl
 return X_train, Y_train, X_test, Y_test 
 
-step 4 :
+* step 4 :
 use MakeOneHot( Y, D_out)
 take 2 parameters
 label data (Y_train OR Y_test) 
@@ -42,12 +42,12 @@ D_out number of classes (10 for mnist data )
 to specify the correct class
 return matrix containing all examples for each example zeroing all the values except the correct class
 
-step 4 :
+* step 4 :
 initialize parameters  
 choose initialization method ("random" , "zeros" )
 or use pretrained model from parameters.py so set initialization to "prev_parameters"
 
-step 5 :
+* step 5 :
 training
 choose optimization method 
 gd,SGD,momentum,adam
@@ -112,13 +112,13 @@ L_layer_model_minibatch(X, Y, layers_dims, optimizer_mini_batch, initialization,
                             beta1, beta2, epsilon, num_iterations, print_cost)
 this function returns parameters after training 
 
-step 6:
+* step 6:
 testing 
 use 
 L_model_forward(input,parameters,A_layers,A_out)
 
 
-step 7: 
+* step 7: 
 model evaluation
 to draw confusion matrix 
 call this function
