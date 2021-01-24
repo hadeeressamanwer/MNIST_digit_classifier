@@ -16,7 +16,7 @@ implement deep learning model to classify digits
 * Optamizer.
 * Visualization.
 * utilitis Module.
-* Data Preprocessing module for handing nan and onehotencoding.
+* Data Preprocessing module for handling nan and onehotencoding.
 * CNN Forward propagation.
 
 ## dependencies<br/>
