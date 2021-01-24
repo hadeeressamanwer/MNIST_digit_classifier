@@ -32,6 +32,10 @@ def linear_activation_backward(dA, cache, activation): #dl/dz
         dZ = NN.identity_derivative(dA, activation_cache)
         dA_prev, dW, db = linear_backward(dZ, linear_cache)
 
+    elif activation == "tanh":
+        dZ = NN.tanh_derivative(dA, activation_cache)
+        dA_prev, dW, db = linear_backward(dZ, linear_cache)
+
     return dA_prev, dW, db
 
 
@@ -40,7 +44,6 @@ def L_model_backward(AL, Y, caches,LayerActivationFunction,A_out):
     grads = {}
     L = len(caches)  # the number of layers
     m = AL.shape[1]
-    #Y = np.transpose(Y)
     Y = Y.reshape(AL.shape)  # after this line, Y is the same shape as AL
     # Initializing the backpropagation
     # derivative of cost with respect to AL

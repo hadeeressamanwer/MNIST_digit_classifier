@@ -1,4 +1,3 @@
-import math
 import numpy as np
 
 def identity(z):
@@ -19,10 +18,10 @@ def sigmoid(z):
     return s , cache
 
 
-def sigmoid_derivative(dout, z):
-
-    dz = dout * z * (1 - z)
-
+def sigmoid_derivative(dout, cache):
+    z = cache
+    A , temp = sigmoid(z)
+    dz = dout * A * (1 - A)
     return dz
 
 
@@ -42,13 +41,13 @@ def relu_backward(dout, cache):
 
 def tanh(z):
     z = np.tanh(z)
+    cache = z
 
-    return z
+    return z , cache
 
 
 def tanh_derivative(dout, z):
 
-    cache = z
     dz = dout * (1 - np.tanh(z) ** 2)
 
     return dz
@@ -88,7 +87,7 @@ def softmax_loss(Y_pred, Y_true):
     Negative log likelihood loss
     """
     loss = 0.0
-    #Y_true= np.transpose(Y_true)
+
     M = Y_pred.shape[1]
     y_r = np.sum( (Y_pred*Y_true) , axis=0)
     for e in y_r:
@@ -96,4 +95,6 @@ def softmax_loss(Y_pred, Y_true):
             loss += 500
         else:
             loss += -np.log(e)
+
+
     return loss/M

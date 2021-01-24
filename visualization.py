@@ -8,3 +8,4 @@ def draw_costs(costs,learning_rate):
     plt.xlabel('iterations (per hundreds)')
     plt.title("Learning rate =" + str(learning_rate))
     plt.show()
+
