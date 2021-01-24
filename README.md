@@ -21,17 +21,17 @@ implement deep learning model to classify digits
 
 
 ## steps
-* step1 : (<--  )
-import dependencies
+* step1 :<br/> 
+import dependencies<br/>
 
-* steps 2 : (<--  )
-preparing dataset (<--  )
--use download_mnist() function to download mnist dataset (<--  )
--use save_mnist() function to save mnist in mnist.pkl (<--  )
+* steps 2 :<br/>
+preparing dataset<br/>
+-use download_mnist() function to download mnist dataset<br/> 
+-use save_mnist() function to save mnist in mnist.pkl<br/>
 
-* steps 3 :
-use load function () to 
-load data for training and testing from mnist.pkl
+* steps 3 :<br/>
+use load function () to<br/>
+load data for training and testing from mnist.pkl<br/>
 return X_train, Y_train, X_test, Y_test 
 
 * step 4 :
