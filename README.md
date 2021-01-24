@@ -2,8 +2,8 @@
 implement deep learning model to classify digits
 
 ## Installation:
-### pip install phoenix_ml7
-### from phoenix_m17 import Framework
+### pip install phoenix_ml9
+### from phoenix_m19 import Framework
 
 
 ## Main modules:
@@ -148,10 +148,13 @@ conv(A_prev, W, b, stride,pad) <br/>
 and for pooling call<br/>
 pool(A_prev, f,stride, mode = "max")<br/>
 to modes available : max and average<br/>
-# LNET5 :<br/>
+## Data preprocessing<br/>
+## LNET5 :<br/>
 use lnet function<br/>  
+still need preparation<br/>
 lnet(x_train)<br/>
 x_train-> input image matrix 28x28 variable <br/>
+
 
 
 
