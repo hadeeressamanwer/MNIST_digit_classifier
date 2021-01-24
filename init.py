@@ -10,13 +10,13 @@ def get_batch(X, Y, batch_size):
     i = random.randint(1, N-batch_size)
     return X[i:i+batch_size], Y[i:i+batch_size]
 
-init()
+#init()
 X_train, Y_train, X_test, Y_test = load()
 Y_evalution = Y_test
 
 
 
-batch_size = 1
+batch_size = 100
 D_out=10
 
 X_batch, Y_batch = get_batch(X_train, Y_train, batch_size)

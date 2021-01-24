@@ -21,49 +21,50 @@ optimizer = "adam"
 # optimizer_mini_batch = "gd" , "adam" , "momentum"
 optimizer_mini_batch = "adam"
 # initialization = "random" , "zeros" ,"prev_parameters" -> initilaize with known values from parameters.npy file
-initialization = "prev_parameters"
+initialization = "random"
 # ActivationFunctions = "relu" , "identity" , "sigmoid" , "tanh"
 A_layers = "relu"
 A_out = "relu"
 num_iterations = 1000
 learning_rate = 0.0005
 print_cost = True
+print_every = 10
 epsilon = 1e-8
 mini_batch_size = 1000
 beta1 = 0.9
 beta2 = 0.999
 beta = 0.9
 # if prev_parameters not used make it else = utils_module.load()
-prev_parameters = utils_module.load('parameters.py')
-save = True
+prev_parameters = utils_module.load_parameters('parameters.py')
+save = False
 save_to_model = False
 
 #if previous weights reaches good accuracy save it to model_parameters.py before saving the current weights to parameters.py
 if save_to_model:
-    model_parameters = utils_module.load('parameters.py')
-    utils_module.save('model_parameters.py', model_parameters)
+    model_parameters = utils_module.load_parameters('parameters.py')
+    utils_module.save_parameters('model_parameters.py', model_parameters)
 
 
 if optimizer == "gd":
     parameters = optimization.L_layer_model_GD(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, learning_rate, num_iterations,
-                     print_cost)
+                     print_cost,print_every)
 elif optimizer == "SGD":
-    parameters = optimization.L_layer_model_SGD(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, learning_rate, num_iterations, print_cost)
+    parameters = optimization.L_layer_model_SGD(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, learning_rate, num_iterations, print_cost,print_every)
 elif optimizer == "momentum":
-    parameters = optimization.L_layer_model_GDWithMomentum(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, beta, learning_rate, num_iterations, print_cost)
+    parameters = optimization.L_layer_model_GDWithMomentum(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, beta, learning_rate, num_iterations, print_cost,print_every)
 
 elif optimizer == "adam":
     parameters = optimization.L_layer_model_Adam(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters,beta1 , beta2 ,  epsilon ,learning_rate,
-                                                 num_iterations,  print_cost)
+                                                 num_iterations,  print_cost,print_every)
 
 elif optimizer == "mini_batch":
     parameters = optimization.L_layer_model_minibatch(X, Y, layers_dims, optimizer_mini_batch, initialization, A_layers, A_out,prev_parameters,
                                                       mini_batch_size, learning_rate, beta,
-                            beta1, beta2, epsilon, num_iterations, print_cost)
+                            beta1, beta2, epsilon, num_iterations, print_cost,print_every)
 
 
 if save:
-    utils_module.save('parameters.py',parameters)
+    utils_module.save_parameters('parameters.py',parameters)
 
 
 Y_pred , cache = forward_prop.L_model_forward(X_test_t,parameters,A_layers,A_out)

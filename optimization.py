@@ -2,6 +2,7 @@ import math
 import numpy as np
 import forward_prop
 import back_prop
+import init_param
 import visualization
 
 
@@ -26,7 +27,7 @@ he intilization is recommended with Relu Activation Function
 A_layers = Activation Function of Layers ("relu","sigmoid","identity")
 A_out = A_layers = Activation Function of Output Layer ("relu","sigmoid","identity")
 """
-def L_layer_model_GD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0,learning_rate=0.0075, num_iterations=1000,  print_cost=True):
+def L_layer_model_GD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0,learning_rate=0.0075, num_iterations=1000,  print_cost=True, print_every = 100):
     costs = []  # keep track of cost
 
     # Parameters initialization.
@@ -54,9 +55,9 @@ def L_layer_model_GD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_pa
 
 
         # Print the cost every 100 iteration and i % 100 == 0
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             print("Cost after iteration %i: %f" % (i, cost))
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             costs.append(cost)
 
     # plot the cost
@@ -68,7 +69,7 @@ def L_layer_model_GD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_pa
 
 
 
-def L_layer_model_SGD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0 ,learning_rate=0.0075, num_iterations=1000,  print_cost=True):
+def L_layer_model_SGD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0 ,learning_rate=0.0075, num_iterations=1000,  print_cost=True , print_every = 100):
 
 
     m = X.shape[1]
@@ -98,9 +99,9 @@ def L_layer_model_SGD(X, Y, layers_dims,initialization, A_layers , A_out ,prev_p
 
         cost = cost /m
 
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             print("Cost after iteration %i: %f" % (i, cost))
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             costs.append(cost)
 
         cost = 0
@@ -140,7 +141,7 @@ def update_parameters_with_momentum(parameters, grads, v, beta, learning_rate):
     return parameters, v
 
 
-def L_layer_model_GDWithMomentum(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0 ,beta=0.9,learning_rate=0.0075, num_iterations=1000,  print_cost=True):
+def L_layer_model_GDWithMomentum(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0 ,beta=0.9,learning_rate=0.0075, num_iterations=1000,  print_cost=True , print_every = 100):
 
 
     costs = []  # keep track of cost
@@ -173,9 +174,9 @@ def L_layer_model_GDWithMomentum(X, Y, layers_dims,initialization, A_layers , A_
 
 
         # Print the cost every 100 iteration and i % 100 == 0
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             print("Cost after iteration %i: %f" % (i, cost))
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             costs.append(cost)
 
     # plot the cost
@@ -228,7 +229,7 @@ def update_parameters_with_adam(parameters, grads, v, s, t, learning_rate=0.01,
     return parameters, v, s
 
 def L_layer_model_Adam(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters = 0 ,beta1 = 0.9, beta2 = 0.999,  epsilon = 1e-8,learning_rate=0.0075,
-                       num_iterations=1000,  print_cost=True):
+                       num_iterations=1000,  print_cost=True,print_every =100):
 
     costs = []  # keep track of cost
 
@@ -261,9 +262,9 @@ def L_layer_model_Adam(X, Y, layers_dims,initialization, A_layers , A_out ,prev_
 
 
         # Print the cost every 100 iteration and i % 100 == 0
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             print("Cost after iteration %i: %f" % (i, cost))
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             costs.append(cost)
 
     # plot the cost
@@ -303,7 +304,7 @@ def random_mini_batches(X, Y, mini_batch_size=64):
 
 
 def L_layer_model_minibatch(X, Y, layers_dims, optimizer,initialization, A_layers , A_out,prev_parameters = 0, mini_batch_size=64,learning_rate=0.0007, beta=0.9,
-          beta1=0.9, beta2=0.999, epsilon=1e-8, num_iterations=1000, print_cost=True):
+          beta1=0.9, beta2=0.999, epsilon=1e-8, num_iterations=1000, print_cost=True,print_every = 100):
 
 
     L = len(layers_dims)  # number of layers in the neural networks
@@ -359,9 +360,9 @@ def L_layer_model_minibatch(X, Y, layers_dims, optimizer,initialization, A_layer
         cost_avg = cost_total / m
 
         # Print the cost every 1000 iteration
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             print("Cost after iteration %i: %f" % (i, cost_avg))
-        if print_cost and i % 100 == 0:
+        if print_cost and i % print_every == 0:
             costs.append(cost_avg)
 
     # plot the cost
