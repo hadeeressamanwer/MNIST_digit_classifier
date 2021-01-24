@@ -19,6 +19,18 @@ implement deep learning model to classify digits
 * Data Preprocessing module for handing nan and onehotencoding.
 * CNN Forward propagation.
 
+## dependencies<br/>
+import pickle<br/>
+import numpy as np<br/>
+from urllib import request<br/>
+import gzip<br/>
+import math<br/>
+#for visualization<br/>
+import numpy as np<br/>
+import pandas as pd<br/>
+import seaborn as sn<br/>
+import matplotlib.pyplot as plt<br/>
+from prettytable import PrettyTable<br/>
 
 ## steps
 * step1 :<br/> 
