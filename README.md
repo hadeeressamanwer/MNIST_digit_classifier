@@ -66,12 +66,13 @@ gd,SGD,momentum,adam<br/>
 
 if gd (gradient descent is selected use this fn)<br/>
 use this fn<br/>
-L_layer_model_GD(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, learning_rate, num_iterations,print_cost)<br/>
+L_layer_model_GD(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, learning_rate, num_iterations,print_cost,print_every)<br/>
 X->trainig (x_train)<br/>
 Y->y label output from onehot function<br/>
 layers_dims-> (number of input features,no.of nodes in 1st layer,no.of nodes in 2nd layer,no.of nodes in 3rd layer,.....,no.of nodes in m layer)<br/>
 A_layers-> activation function for all layers except last layer provided options ("relu","sigmoid","identity")<br/>
 A_out->activation function for last layer provided options ("relu","sigmoid","identity")<br/>
+print_every-> for visualization choose when to print every iteration
 prev_parameters -> is used to save model parameters<br/>
 this function returns parameters after training<br/>
 
@@ -82,15 +83,16 @@ use<br/>
 X->trainig (x_train)<br/>
 Y->y label output from onehot function<br/>
 layers_dims-> (number of input features,no.of nodes in 1st layer,no.of nodes in 2nd layer,no.of nodes in 3rd layer,.....,no.of nodes in m layer)<br/>
-A_layers-> activation function for all layers except last layer provided options ("relu","sigmoid","identity")<br/>
+A_layers-> activation function for all layers except last layer provided options ("relu","sigmoid","identity",print_every)<br/>
 A_out->activation function for last layer provided options ("relu","sigmoid","identity")<br/>
 prev_parameters -> is used to save model parameters<br/>
+print_every-> for visualization choose when to print every iteration
 this function returns parameters after training<br/> 
 
 
 if momentum<br/>
 use<br/>
- L_layer_model_GDWithMomentum(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, beta, learning_rate, num_iterations, print_cost)<br/>
+ L_layer_model_GDWithMomentum(X, Y, layers_dims, initialization, A_layers, A_out,prev_parameters, beta, learning_rate, num_iterations, print_cost,print_every)<br/>
 X->trainig (x_train)<br/>
 Y->y label output from onehot function<br/>
 layers_dims-> (number of input features,no.of nodes in 1st layer,no.of nodes in 2nd layer,no.of nodes in 3rd layer,.....,no.of nodes in m layer)<br/>
@@ -99,11 +101,12 @@ A_out->activation function for last layer provided options ("relu","sigmoid","id
 prev_parameters -> is used to save model parameters<br/>
 this function returns parameters after training<br/>
 beta ->choose momentum paramete (0-1)<br/>
+print_every-> for visualization choose when to print every iteration
 this function returns parameters after training<br/>
 
 if adam<br/>
 use<br/>
-L_layer_model_Adam(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters,beta1 , beta2 ,  epsilon ,learning_rate,num_iterations,  print_cost)<br/>
+L_layer_model_Adam(X, Y, layers_dims,initialization, A_layers , A_out ,prev_parameters,beta1 , beta2 ,  epsilon ,learning_rate,num_iterations,  print_cost,print_every)<br/>
 X->trainig (x_train)<br/>
 Y->y label output from onehot function<br/>
 layers_dims-> (number of input features,no.of nodes in 1st layer,no.of nodes in 2nd layer,no.of nodes in 3rd layer,.....,no.of nodes in m layer)<br/>
@@ -113,12 +116,13 @@ prev_parameters -> is used to save model parameters<br/>
 this function returns parameters after training <br/>
 beta 1 ->choose parameter (0-1)<br/>
 beta 2 ->choose parameter (0-1)<br/>
+print_every-> for visualization choose when to print every iteration
 this function returns parameters after training <br/>
 
 comment :<br/>
 for using minibatch trainig<br/> 
 use this function<br/>
-L_layer_model_minibatch(X, Y, layers_dims, optimizer_mini_batch, initialization, A_layers, A_out,prev_parameters, mini_batch_size, learning_rate, beta,beta1, beta2, epsilon, num_iterations, print_cost)<br/>
+L_layer_model_minibatch(X, Y, layers_dims, optimizer_mini_batch, initialization, A_layers, A_out,prev_parameters, mini_batch_size, learning_rate, beta,beta1, beta2, epsilon, num_iterations, print_cost,print_every)<br/>
 this function returns parameters after training<br/>
 
 * step 6:<br/>
