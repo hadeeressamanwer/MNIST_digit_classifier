@@ -72,7 +72,7 @@ Y->y label output from onehot function<br/>
 layers_dims-> (number of input features,no.of nodes in 1st layer,no.of nodes in 2nd layer,no.of nodes in 3rd layer,.....,no.of nodes in m layer)<br/>
 A_layers-> activation function for all layers except last layer provided options ("relu","sigmoid","identity")<br/>
 A_out->activation function for last layer provided options ("relu","sigmoid","identity")<br/>
-print_every-> for visualization choose when to print every iteration
+print_every-> for visualization choose when to print every iteration<br/>
 prev_parameters -> is used to save model parameters<br/>
 this function returns parameters after training<br/>
 
@@ -86,7 +86,7 @@ layers_dims-> (number of input features,no.of nodes in 1st layer,no.of nodes in 
 A_layers-> activation function for all layers except last layer provided options ("relu","sigmoid","identity",print_every)<br/>
 A_out->activation function for last layer provided options ("relu","sigmoid","identity")<br/>
 prev_parameters -> is used to save model parameters<br/>
-print_every-> for visualization choose when to print every iteration
+print_every-> for visualization choose when to print every iteration<br/>
 this function returns parameters after training<br/> 
 
 
@@ -101,7 +101,7 @@ A_out->activation function for last layer provided options ("relu","sigmoid","id
 prev_parameters -> is used to save model parameters<br/>
 this function returns parameters after training<br/>
 beta ->choose momentum paramete (0-1)<br/>
-print_every-> for visualization choose when to print every iteration
+print_every-> for visualization choose when to print every iteration<br/>
 this function returns parameters after training<br/>
 
 if adam<br/>
@@ -116,7 +116,7 @@ prev_parameters -> is used to save model parameters<br/>
 this function returns parameters after training <br/>
 beta 1 ->choose parameter (0-1)<br/>
 beta 2 ->choose parameter (0-1)<br/>
-print_every-> for visualization choose when to print every iteration
+print_every-> for visualization choose when to print every iteration<br/>
 this function returns parameters after training <br/>
 
 comment :<br/>
@@ -137,6 +137,20 @@ to draw confusion matrix <br/>
 call this function<br/>
 confusionmatrix(Y_evalution, Y_evalution_pred)<br/>
 this function returns confusion matrix : accuracy , Precision, Recall, F1 score for each class <br/>
+
+
+
+
+#additional features<br/>
+CNN:<br/>
+cnn forward propagation is valid in the framework call function <br/>
+conv(A_prev, W, b, stride,pad) <br/>
+and for pooling call<br/>
+pool(A_prev, f,stride, mode = "max")<br/>
+to modes available : max and average<br/>
+
+
+
 
 
 
