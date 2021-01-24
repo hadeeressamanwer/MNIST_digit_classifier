@@ -2,8 +2,8 @@
 implement deep learning model to classify digits
 
 ## Installation:
-### pip install phoenix_ml5
-### from phoenix_m15 import Framework
+### pip install phoenix_ml7
+### from phoenix_m17 import Framework
 
 
 ## Main modules:
@@ -141,17 +141,17 @@ this function returns confusion matrix : accuracy , Precision, Recall, F1 score 
 
 
 
-*additional features<br/>
-*CNN:<br/>
+## additional features<br/>
+## CNN:<br/>
 cnn forward propagation is valid in the framework call function <br/>
 conv(A_prev, W, b, stride,pad) <br/>
 and for pooling call<br/>
 pool(A_prev, f,stride, mode = "max")<br/>
 to modes available : max and average<br/>
-*LNET5 :<br/>
+# LNET5 :<br/>
 use lnet function<br/>  
 lnet(x_train)<br/>
-x_train-> input image matrix 28*28 variable <br/>
+x_train-> input image matrix 28x28 variable <br/>
 
 
 
