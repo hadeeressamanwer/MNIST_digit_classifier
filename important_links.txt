@@ -1,0 +1,10 @@
+colab link :
+
+https://colab.research.google.com/drive/1jVeANmmfvyMbjFCmQsdF1H9wl1f1yJYE?usp=sharing&fbclid=IwAR3mqxswRIPl-JFhYKUwlXKCuLjQ0exWnHqjEZCqcYvkJ2AzKoK0UShKK3g
+
+
+github repo link:
+
+https://github.com/hadeeressamanwer/MNIST_digit_classifier
+
+
