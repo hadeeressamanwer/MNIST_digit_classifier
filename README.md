@@ -33,20 +33,20 @@ import matplotlib.pyplot as plt<br/>
 from prettytable import PrettyTable<br/>
 
 ## steps
-* step1 :<br/> 
+## step1 :<br/> 
 import dependencies<br/>
 
-* steps 2 :<br/>
+## steps 2 :<br/>
 preparing dataset<br/>
 -use download_mnist() function to download mnist dataset<br/> 
 -use save_mnist() function to save mnist in mnist.pkl<br/>
 
-* steps 3 :<br/>
+## steps 3 :<br/>
 use load function () to<br/>
 load data for training and testing from mnist.pkl<br/>
 return X_train, Y_train, X_test, Y_test<br/>
 
-* step 4 :<br/>
+## step 4 :<br/>
 use MakeOneHot( Y, D_out)<br/>
 take 2 parameters<br/>
 label data (Y_train OR Y_test)<br/>
@@ -54,12 +54,12 @@ D_out number of classes (10 for mnist data )<br/>
 to specify the correct class<br/>
 return matrix containing all examples for each example zeroing all the values except the correct class<br/>
 
-* step 4 :<br/>
+## step 4 :<br/>
 initialize parameters<br/>
 choose initialization method ("random" , "zeros" )<br/>
 or use pretrained model from parameters.py so set initialization to "prev_parameters"<br/>
 
-* step 5 :<br/>
+## step 5 :<br/>
 training<br/>
 choose optimization method<br/>
 gd,SGD,momentum,adam<br/>
@@ -125,13 +125,13 @@ use this function<br/>
 L_layer_model_minibatch(X, Y, layers_dims, optimizer_mini_batch, initialization, A_layers, A_out,prev_parameters, mini_batch_size, learning_rate, beta,beta1, beta2, epsilon, num_iterations, print_cost,print_every)<br/>
 this function returns parameters after training<br/>
 
-* step 6:<br/>
+## step 6:<br/>
 testing <br/>
 use <br/>
 L_model_forward(input,parameters,A_layers,A_out)<br/>
 
 
-* step 7: <br/>
+## step 7: <br/>
 model evaluation<br/>
 to draw confusion matrix <br/>
 call this function<br/>
