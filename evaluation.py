@@ -20,7 +20,9 @@ def confusionmatrix(currentDataClass, predictedClass):
     precision = tp / (tp+fp)
     precision[np.isnan(precision)] = 0.0
     recall = tp / (tp+fn)
+    recall[np.isnan(recall)] = 0.0
     f1score = (2*tp) / ((2*tp)+fp+fn)
+    f1score[np.isnan(f1score)] = 0.0
     plt.figure(figsize=(10,7))
     sn.set(font_scale=1.4) # for label size
     sn.heatmap(conf_matrix, annot=True, annot_kws={"size": 16}) # font size
