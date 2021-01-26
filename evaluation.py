@@ -16,7 +16,9 @@ def confusionmatrix(currentDataClass, predictedClass):
     tp = np.diag(conf_matrix)
     tn = conf_matrix.values.sum() - (fp + fn + tp)
     accuracy = (tp+tn)/(tp+tn+fp+fn)
+    accuracy[np.isnan(accuracy)] = 0.0
     precision = tp / (tp+fp)
+    precision[np.isnan(precision)] = 0.0
     recall = tp / (tp+fn)
     f1score = (2*tp) / ((2*tp)+fp+fn)
     plt.figure(figsize=(10,7))
